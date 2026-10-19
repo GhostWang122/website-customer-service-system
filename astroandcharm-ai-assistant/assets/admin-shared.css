@@ -1,0 +1,153 @@
+/**
+ * Shared WP admin chrome — V1.7.1
+ * Used by Settings (property), Analytics (reporting), Contacts.
+ */
+
+:root {
+  --aac-green: #03a84e;
+  --aac-green-hover: #029443;
+  --aac-border: #e5e7eb;
+  --aac-muted: #6b7280;
+  --aac-text: #1f2937;
+  --aac-bg-soft: #f7f8fa;
+  --aac-radius: 8px;
+}
+
+/* Layout shell: nav | main */
+.aacai-admin-shell {
+  display: grid;
+  grid-template-columns: 240px 1fr; /* 1.7.2: room for bilingual labels */
+  gap: 0;
+  background: #fff;
+  border: 1px solid var(--aac-border);
+  border-radius: var(--aac-radius);
+  overflow: hidden;
+  min-height: 520px;
+  max-width: 1200px;
+}
+.aacai-admin-nav {
+  background: var(--aac-bg-soft);
+  border-right: 1px solid var(--aac-border);
+  padding: 14px 10px;
+}
+.aacai-admin-nav h2 { margin: 0 0 12px; font-size: 15px; padding: 0 6px; color: var(--aac-text); }
+.aacai-admin-nav .grp {
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+  color: var(--aac-muted); padding: 10px 8px 4px;
+}
+.aacai-admin-nav a,
+.aacai-admin-nav .folder {
+  display: block; padding: 8px 10px; border-radius: 6px; color: var(--aac-text);
+  text-decoration: none; font-size: 13px; margin: 1px 0;
+}
+.aacai-admin-nav a.is-active,
+.aacai-admin-nav .folder.is-active {
+  background: #e8edf3; font-weight: 600; box-shadow: inset 3px 0 0 var(--aac-green);
+}
+.aacai-admin-nav a.na { opacity: 0.4; pointer-events: none; }
+.aacai-admin-main { padding: 18px 20px; }
+
+.aacai-green-btn {
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  width: 100%; margin: 0 0 14px; padding: 9px 12px; border: 0; border-radius: 6px;
+  background: var(--aac-green); color: #fff; font-size: 13px; font-weight: 600;
+  text-decoration: none; cursor: pointer;
+}
+/* 1.7.2: never wrap bilingual button labels */
+.aacai-green-btn { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.aacai-green-btn:hover { background: var(--aac-green-hover); color: #fff; }
+
+/* Property / Settings blocks */
+.aacai-property { max-width: 920px; }
+.aacai-prop-block {
+  background: #fff; border: 1px solid var(--aac-border); border-radius: var(--aac-radius);
+  padding: 18px 20px; margin: 14px 0;
+}
+.aacai-prop-block h2 {
+  margin: 0 0 14px; font-size: 15px; display: flex; align-items: center; gap: 8px; color: var(--aac-text);
+}
+.aacai-prop-block .aacai-field { margin-bottom: 14px; }
+.aacai-prop-block label.aacai-label {
+  font-weight: 600; display: block; margin-bottom: 6px; font-size: 13px;
+}
+.aacai-prop-block input[type=text],
+.aacai-prop-block input[type=password],
+.aacai-prop-block input[type=url],
+.aacai-prop-block input[type=number],
+.aacai-prop-block textarea,
+.aacai-prop-block select { width: 100%; max-width: 560px; }
+.aacai-prop-row { display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-start; }
+.aacai-prop-row .grow { flex: 1; min-width: 240px; }
+.aacai-prop-logo {
+  width: 96px; height: 96px; border-radius: 12px; border: 1px solid var(--aac-border);
+  object-fit: contain; background: #f9fafb;
+}
+.aacai-prop-status { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; }
+.aacai-prop-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--aac-green); }
+.aacai-prop-dot.off { background: #9ca3af; }
+.aacai-prop-muted { font-size: 12px; color: var(--aac-muted); }
+.aacai-prop-id {
+  font-family: ui-monospace, monospace; font-size: 12px; background: #f3f4f6;
+  padding: 6px 10px; border-radius: 6px; display: inline-block;
+}
+
+/* Reporting metrics / charts */
+.aacai-reporting { max-width: 1200px; }
+.aacai-rep-head {
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 10px; margin-bottom: 16px;
+}
+.aacai-rep-head h1 { margin: 0; font-size: 20px; }
+.aacai-metric-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 12px 0 20px; }
+.aacai-metric {
+  background: #fff; border: 1px solid var(--aac-border); border-radius: var(--aac-radius);
+  padding: 14px 16px; min-width: 120px; flex: 1;
+}
+.aacai-metric .lab { font-size: 11px; color: var(--aac-muted); text-transform: uppercase; letter-spacing: 0.04em; }
+.aacai-metric .num { font-size: 28px; font-weight: 700; margin-top: 4px; line-height: 1.2; }
+.aacai-metric.pos .num { color: var(--aac-green); }
+.aacai-metric.neg .num { color: #e53935; }
+.aacai-metric.neu .num { color: #f5a623; }
+.aacai-chart {
+  background: #fafbfc; border: 1px solid var(--aac-border); border-radius: var(--aac-radius);
+  padding: 16px; margin: 12px 0;
+}
+.aacai-chart-bars { display: flex; align-items: flex-end; gap: 6px; height: 160px; padding-top: 8px; }
+.aacai-chart-col {
+  flex: 1; display: flex; flex-direction: column; align-items: center;
+  justify-content: flex-end; height: 100%; min-width: 0;
+}
+.aacai-chart-bar {
+  width: 70%; max-width: 28px; border-radius: 3px 3px 0 0; background: var(--aac-green); min-height: 2px;
+}
+.aacai-chart-stack {
+  width: 70%; max-width: 28px; display: flex; flex-direction: column-reverse;
+  border-radius: 3px 3px 0 0; overflow: hidden; min-height: 2px;
+}
+.aacai-chart-lbl {
+  font-size: 9px; color: var(--aac-muted); margin-top: 6px; white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis; max-width: 100%;
+}
+.aacai-total-line { font-size: 13px; color: var(--aac-muted); margin: 0 0 8px; }
+.aacai-total-line strong { font-size: 22px; color: var(--aac-text); }
+
+/* Contacts table extras */
+.aacai-contacts-wrap { max-width: 1200px; }
+.aacai-contacts-toolbar {
+  display: flex; justify-content: space-between; gap: 10px; align-items: center;
+  flex-wrap: wrap; margin-bottom: 12px;
+}
+.aacai-contacts-toolbar input[type=search] { min-width: 220px; }
+.aacai-contacts-wrap .aacai-avatar {
+  display: inline-flex; width: 28px; height: 28px; border-radius: 50%;
+  align-items: center; justify-content: center; background: #f472b6; color: #fff;
+  font-size: 11px; font-weight: 700; margin-right: 8px; vertical-align: middle;
+}
+
+@media (max-width: 782px) {
+  .aacai-admin-shell { grid-template-columns: 1fr; }
+  .aacai-admin-nav { border-right: 0; border-bottom: 1px solid var(--aac-border); }
+}
+
+/* 1.7.2: [hidden] must win over component display rules */
+.aacai-admin [hidden], .aacai-inbox-wrap [hidden], .aacai-admin-shell [hidden] { display: none !important; }

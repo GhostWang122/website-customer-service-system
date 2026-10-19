@@ -1,0 +1,56 @@
+/**
+ * V1.7.9 — hide top-level WP / host / SEO plugin notices on Customer Assistant screens.
+ * Inline duplicate also printed in admin_head (print_admin_notice_killer_css).
+ */
+body.aacai-admin-screen #wpbody-content > .notice:not(.aacai-keep-notice),
+body.aacai-admin-screen #wpbody-content > .updated:not(.aacai-keep-notice),
+body.aacai-admin-screen #wpbody-content > .error:not(.aacai-keep-notice),
+body.aacai-admin-screen #wpbody-content > .update-nag,
+body.aacai-admin-screen #wpbody-content > div.update-nag,
+body.aacai-admin-screen #wpbody-content > .is-dismissible:not(.aacai-keep-notice),
+body.aacai-admin-screen #wpbody-content > div[class*="notice"]:not(.aacai-keep-notice),
+body.aacai-admin-screen .wrap > .notice:not(.aacai-keep-notice),
+body.aacai-admin-screen .update-nag,
+body.aacai-admin-screen #wpbody-content > [class*="hostinger"],
+body.aacai-admin-screen .hostinger-notice,
+body.aacai-admin-screen #wpbody-content > [class*="rank-math-notice"],
+body.aacai-admin-screen .rank-math-notice,
+body.aacai-admin-screen #rank-math-notice,
+body.aacai-admin-screen #wpbody-content > .woocommerce-message:not(.aacai-keep-notice),
+body.aacai-admin-screen #wpbody-content > .elementor-message,
+body.aacai-admin-screen #wpbody-content > .e-notice,
+body.aacai-admin-screen #wpbody-content > .jetpack-jitm-message,
+body.aacai-admin-screen #wpbody-content > .litespeed-notice,
+body.aacai-admin-screen #wpbody-content > .sg-notice {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border: 0 !important;
+}
+body.aacai-admin-screen .aacai-keep-notice,
+body.aacai-admin-screen .aacai-inbox-notice,
+body.aacai-admin-screen .aacai-inbox-wrap > .notice,
+body.aacai-admin-screen .aacai-admin > .notice,
+body.aacai-admin-screen .aacai-property > .notice {
+  display: block !important;
+  visibility: visible !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+.aacai-version-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: #5c4a2e;
+  background: #f3ebe0;
+  border: 1px solid #e0d0b8;
+  border-radius: 999px;
+  padding: 3px 10px;
+  margin-left: 8px;
+  white-space: nowrap;
+  vertical-align: middle;
+}
